@@ -725,12 +725,13 @@
 
     .locations-grid{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(6,minmax(0,1fr));
       gap:24px;
       align-items:stretch;
     }
 
     .location-card{
+      grid-column:span 2;
       min-width:0;
       overflow:hidden;
       display:flex;
@@ -814,16 +815,24 @@
       border:0;
     }
 
-    .location-card.last-center{
-      grid-column:2;
+    /* Con 8 sucursales, las últimas 2 quedan centradas */
+    .location-card.last-row-left{
+      grid-column:2 / span 2;
     }
+
+    .location-card.last-row-right{
+      grid-column:4 / span 2;
+    }
+
 
     @media (max-width:980px){
       .locations-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
-      .location-card.last-center{
+      .location-card,
+      .location-card.last-row-left,
+      .location-card.last-row-right{
         grid-column:auto;
       }
     }
@@ -1083,6 +1092,7 @@
     </section>
   
     
+    
     <section class="locations-section" id="sucursales">
       <div class="container">
 
@@ -1094,264 +1104,234 @@
 
         <div class="locations-grid">
 
-          <!-- 1. Sucursal Teapa 1 -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal Teapa 1</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Av. Gregorio Méndez, Col. Centro, frente a BBVA</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529933066200"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a class="whatsapp-link" href="https://wa.me/529933066200" target="_blank" rel="noopener noreferrer">
                       993 306 6200
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!4v1790782600616!6m8!1m7!1sXraRho44C7eWN4JgE4p7AA!2m2!1d17.54917946769497!2d-92.95300107389545!3f140.90751580344408!4f-10.095289200259998!5f0.7820865974627469"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
                 title="Mapa Sucursal Teapa 1">
               </iframe>
             </div>
           </article>
 
-
-          <!-- 2. Sucursal Teapa 2 -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal Teapa 2</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Humberto Tapia Córdova</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529322326619"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a class="whatsapp-link" href="https://wa.me/529322326619" target="_blank" rel="noopener noreferrer">
                       932 232 6619
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!4v1790782963927!6m8!1m7!1sjRBEIfm1Y2X0rKEOLRwY-Q!2m2!1d17.55343030642494!2d-92.94914507897109!3f269.96584553513253!4f-2.3303216246082314!5f0.7820865974627469"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
                 title="Mapa Sucursal Teapa 2">
               </iframe>
             </div>
           </article>
 
-
-          <!-- 3. Sucursal Ecocel -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal Ecocel</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Pedro Fuentes 306, Col. Centro, Villahermosa, Tabasco</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529932386676"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a class="whatsapp-link" href="https://wa.me/529932386676" target="_blank" rel="noopener noreferrer">
                       993 238 6676
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!4v1790783596357!6m8!1m7!1sUl3s825E7wfL5i1hKvfYnQ!2m2!1d17.99480696077068!2d-92.91595489730285!3f323.83411859799037!4f-9.954116202511187!5f0.7820865974627469"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
                 title="Mapa Sucursal Ecocel">
               </iframe>
             </div>
           </article>
 
-
-          <!-- 4. Sucursal 4 -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal:Ecocel Chontalpa</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: C. Pedro Fuentes Villahermosa, Tabasco</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529321707878"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a class="whatsapp-link" href="https://wa.me/529321707878" target="_blank" rel="noopener noreferrer">
                       932 170 78780
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
-             <iframe src="https://www.google.com/maps/embed?pb=!4v1790786719590!6m8!1m7!1sU2_sST8Flsa8esXVAA9DDw!2m2!1d17.99483636093323!2d-92.91604891958555!3f348.432379637725!4f-10.710819977351534!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1790786719590!6m8!1m7!1sU2_sST8Flsa8esXVAA9DDw!2m2!1d17.99483636093323!2d-92.91604891958555!3f348.432379637725!4f-10.710819977351534!5f0.7820865974627469"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                title="Mapa Sucursal Ecocel Chontalpa">
+              </iframe>
             </div>
           </article>
 
-
-          <!-- 5. Sucursal 5 -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal Ecocel bancomer</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Hermanos Bastar Zozaya Villahermosa, Tabasco</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529933923900"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                     993 392 3900
+                    <a class="whatsapp-link" href="https://wa.me/529933923900" target="_blank" rel="noopener noreferrer">
+                      993 392 3900
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
-             <iframe src="https://www.google.com/maps/embed?pb=!4v1790786910160!6m8!1m7!1sdeC95DFhMSQRdTKDckhN6w!2m2!1d17.9966957118945!2d-92.91610507398715!3f209.25957119634347!4f-10.765123998562288!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1790786910160!6m8!1m7!1sdeC95DFhMSQRdTKDckhN6w!2m2!1d17.9966957118945!2d-92.91610507398715!3f209.25957119634347!4f-10.765123998562288!5f0.7820865974627469"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                title="Mapa Sucursal Ecocel Bancomer">
+              </iframe>
             </div>
           </article>
 
-
-          <!-- 6. Sucursal 6 -->
           <article class="location-card">
             <div class="location-info">
               <h3>Sucursal Pichucalco 2</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Ignacio Zaragoza Pichucalco, Chiapas</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529931097777"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                       993 109 7777
+                    <a class="whatsapp-link" href="https://wa.me/529931097777" target="_blank" rel="noopener noreferrer">
+                      993 109 7777
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!4v1790787056727!6m8!1m7!1sY_7Wg5ZHta-MYmGRMA5n1g!2m2!1d17.51053347973911!2d-93.11740716982668!3f56.34513854187102!4f-11.793690323930377!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1790787056727!6m8!1m7!1sY_7Wg5ZHta-MYmGRMA5n1g!2m2!1d17.51053347973911!2d-93.11740716982668!3f56.34513854187102!4f-11.793690323930377!5f0.7820865974627469"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                title="Mapa Sucursal Pichucalco 2">
+              </iframe>
             </div>
           </article>
 
-
-          <!-- 7. Sucursal 7 -->
-          <article class="location-card last-center">
+          <article class="location-card last-row-left">
             <div class="location-info">
               <h3>Sucursal Pichucalco 3</h3>
-
               <div class="location-meta">
                 <div>
                   <i class="fa-solid fa-location-dot"></i>
                   <span>Dirección: Ignacio Zaragoza Pichucalco, Chiapas</span>
                 </div>
-
                 <div>
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>
                     Teléfono:
-                    <a
-                      class="whatsapp-link"
-                      href="https://wa.me/529932000008"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a class="whatsapp-link" href="https://wa.me/529932000008" target="_blank" rel="noopener noreferrer">
                       993 200 0008
                     </a>
                   </span>
                 </div>
               </div>
             </div>
-
             <div class="location-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!4v1790787115590!6m8!1m7!1sFIg886v57AfTrSpvBcHWUg!2m2!1d17.51156554412875!2d-93.11702644060018!3f80.29612491312174!4f2.3899805343920235!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1790787115590!6m8!1m7!1sFIg886v57AfTrSpvBcHWUg!2m2!1d17.51156554412875!2d-93.11702644060018!3f80.29612491312174!4f2.3899805343920235!5f0.7820865974627469"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                title="Mapa Sucursal Pichucalco 3">
+              </iframe>
+            </div>
+          </article>
+
+          <article class="location-card last-row-right">
+            <div class="location-info">
+              <h3>Sucursal Jalapa</h3>
+              <div class="location-meta">
+                <div>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Dirección: Blvd. Lic. José María Pino Suárez Jalapa, Tabasco</span>
+                </div>
+                <div>
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>
+                    Teléfono:
+                    <a class="whatsapp-link" href="https://wa.me/529934373878" target="_blank" rel="noopener noreferrer">
+                      993 437 3878
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="location-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1790788982707!6m8!1m7!1sdYutAR4VOy-zffylHYK90w!2m2!1d17.72176431842629!2d-92.81062721634656!3f312.7294728774508!4f-14.955084594391465!5f1.088629303244344"
+                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                title="Mapa Sucursal Jalapa">
+              </iframe>
             </div>
           </article>
 
         </div>
       </div>
     </section>
+
 
 
     <section class="faq-section" id="preguntas-frecuentes">
